@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madhubani Impact — Impact Investing Advisory</title>
+  <meta name="description" content="Madhubani Impact guides clients through the complexities of impact investing — from strategy and due diligence to investment policies that are both rigorous and mission-aligned.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5F0E8;
+      --cream-light: #FAF7F2;
+      --brown-dark: #2C2420;
+      --brown-mid: #4A3F38;
+      --brown-light: #6B5E55;
+      --terracotta: #B8513B;
+      --terracotta-hover: #9E4432;
+      --section-dark: #3A3230;
+      --card-dark: #4A4240;
+      --rule-color: #C4B8AB;
+
+      --font-serif: 'Source Serif 4', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+
+      --max-width: 960px;
+      --side-pad: 24px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--brown-dark);
+      background-color: var(--cream-light);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    /* ── Navigation ── */
+    .nav {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule-color);
+    }
+
+    .nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav__wordmark {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--brown-dark);
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav__links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--brown-mid);
+      transition: color 0.2s;
+    }
+
+    .nav__links a:hover,
+    .nav__links a.nav--active {
+      color: var(--terracotta);
+    }
+
+    /* ── Section Label (eyebrow) ── */
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1.5px;
+      background: var(--terracotta);
+    }
+
+    .eyebrow--light {
+      color: var(--terracotta);
+    }
+    .eyebrow--light::before {
+      background: var(--terracotta);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 80px 0 96px;
+    }
+
+    .hero__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 400;
+      line-height: 1.18;
+      color: var(--brown-dark);
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+
+    .hero__body {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--brown-mid);
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 13px 28px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn--primary {
+      background: var(--terracotta);
+      color: #fff;
+    }
+    .btn--primary:hover {
+      background: var(--terracotta-hover);
+    }
+
+    .btn--text {
+      background: none;
+      color: var(--brown-mid);
+      padding: 13px 4px;
+    }
+    .btn--text:hover {
+      color: var(--terracotta);
+    }
+
+    /* ── About / Mission ── */
+    .about {
+      background: var(--cream);
+      padding: 80px 0;
+    }
+
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about__tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(26px, 3.5vw, 34px);
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--brown-dark);
+    }
+
+    .about__text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--brown-mid);
+    }
+
+    .about__text p + p {
+      margin-top: 20px;
+    }
+
+    /* ── Services ── */
+    .services {
+      padding: 88px 0;
+    }
+
+    .services__heading {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3.5vw, 38px);
+      font-weight: 400;
+      margin-bottom: 48px;
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 36px;
+    }
+
+    .service-card {
+      padding-top: 20px;
+      border-top: 2.5px solid var(--brown-dark);
+    }
+
+    .service-card__title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: var(--brown-dark);
+    }
+
+    .service-card__desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--brown-light);
+    }
+
+    /* ── Selected Work ── */
+    .work {
+      background: var(--section-dark);
+      color: #fff;
+      padding: 80px 0;
+    }
+
+    .work .eyebrow {
+      color: var(--terracotta);
+    }
+    .work .eyebrow::before {
+      background: var(--terracotta);
+    }
+
+    .work__heading {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3.5vw, 38px);
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+
+    .work__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .work-card {
+      background: var(--card-dark);
+      border-radius: 6px;
+      padding: 36px 32px;
+    }
+
+    .work-card__title {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 500;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+
+    .work-card__desc {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #C4BAB2;
+    }
+
+    /* ── Contact ── */
+    .contact {
+      padding: 96px 0;
+      text-align: center;
+    }
+
+    .contact__heading {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 400;
+      line-height: 1.25;
+      max-width: 560px;
+      margin: 0 auto 20px;
+    }
+
+    .contact__body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--brown-mid);
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid var(--rule-color);
+      padding: 24px 0;
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer__text {
+      font-size: 13px;
+      color: var(--brown-light);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav__links { gap: 20px; }
+
+      .hero { padding: 56px 0 72px; }
+
+      .about .container {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .services__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+
+      .work__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      :root { --side-pad: 20px; }
+
+      .nav__links { gap: 16px; }
+      .nav__links a { font-size: 13px; }
+
+      .services__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero__actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
+
+    /* ── Focus / Accessibility ── */
+    :focus-visible {
+      outline: 2px solid var(--terracotta);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="#" class="nav__wordmark">Madhubani Impact</a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact" class="nav--active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Impact Investing Advisory</p>
+      <h1 class="hero__headline">Deploy capital with confidence — and conscience.</h1>
+      <p class="hero__body">Madhubani Impact guides clients through the complexities of impact investing — from strategy and due diligence to investment policies that are both rigorous and mission-aligned.</p>
+      <div class="hero__actions">
+        <a href="mailto:hello@madhubaniimpact.com" class="btn btn--primary">Email us</a>
+        <a href="#services" class="btn btn--text">Our services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div>
+        <h2 class="about__tagline">A more equitable, sustainable future — by design.</h2>
+      </div>
+      <div class="about__text">
+        <p>Every investment is a statement about the future you want to build. We help families, foundations, and endowments make that statement deliberately — pairing institutional-grade rigor with a clear-eyed commitment to mission.</p>
+        <p>Based in Dallas and working nationally since 2024, we sit alongside our clients through the full arc of an investment: shaping strategy, pressure-testing opportunities, and codifying policies that keep capital and values pointed in the same direction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <p class="eyebrow">Services</p>
+      <h2 class="services__heading">How we help</h2>
+      <div class="services__grid">
+        <div class="service-card">
+          <h3 class="service-card__title">Impact Strategy</h3>
+          <p class="service-card__desc">Translating your mission into an actionable investment thesis — defining where, how, and why your capital goes to work.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-card__title">Due Diligence</h3>
+          <p class="service-card__desc">Rigorous evaluation of funds, managers, and direct investments — financial fundamentals and impact integrity, examined together.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-card__title">Investment Policy</h3>
+          <p class="service-card__desc">Building investment policy statements that are rigorous and mission-aligned — governance your board and advisors can stand behind.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-card__title">Fund Formation</h3>
+          <p class="service-card__desc">Launching your first impact fund — strategy, pipeline, documentation, and legal, from close to launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Work -->
+  <section class="work" id="work">
+    <div class="container">
+      <p class="eyebrow eyebrow--light">Selected Work</p>
+      <h2 class="work__heading">Recent engagements</h2>
+      <div class="work__grid">
+        <div class="work-card">
+          <h3 class="work-card__title">Venture &amp; fund due diligence</h3>
+          <p class="work-card__desc">Led due diligence on multi-million-dollar investments in venture capital and startups — including a first-time-manager fund and an impact-learning platform.</p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-card__title">Portfolio advisory</h3>
+          <p class="work-card__desc">Advised portfolio companies in fintech, legal-tech, and sustainable materials — evaluating business practices and strategic pivots to inform funding decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="contact__heading">Let us talk about your capital's purpose.</h2>
+      <p class="contact__body">Whether you are shaping a first impact allocation or refining a mature portfolio, we would welcome the conversation.</p>
+      <a href="mailto:hello@madhubaniimpact.com" class="btn btn--primary">hello@madhubaniimpact.com</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <span class="footer__text">&copy; 2026 Madhubani Impact</span>
+      <span class="footer__text">Dallas, Texas</span>
+    </div>
+  </footer>
+
+</body>
+</html>
