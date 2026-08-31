@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review: Positive Sum by Roy Swan — Madhubani Impact</title>
+  <meta name="description" content="A review of Roy Swan's Positive Sum — on zero-sum thinking, externalities, and what it costs the economy when we measure only what is easy to measure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5F0E8;
+      --cream-light: #FAF7F2;
+      --brown-dark: #2C2420;
+      --brown-mid: #4A3F38;
+      --brown-light: #6B5E55;
+      --terracotta: #B8513B;
+      --terracotta-hover: #9E4432;
+      --rule-color: #C4B8AB;
+      --font-serif: 'Source Serif 4', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+      --max-width: 700px;
+      --side-pad: 24px;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--brown-dark);
+      background-color: var(--cream-light);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    .container--wide {
+      max-width: 960px;
+    }
+
+    /* ── Navigation ── */
+    .nav {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule-color);
+    }
+
+    .nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav__wordmark {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--brown-dark);
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav__links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--brown-mid);
+      transition: color 0.2s;
+    }
+
+    .nav__links a:hover,
+    .nav__links a.nav--active {
+      color: var(--terracotta);
+    }
+
+    /* ── Article Header ── */
+    .article-header {
+      padding: 72px 0 40px;
+      border-bottom: 1px solid var(--rule-color);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1.5px;
+      background: var(--terracotta);
+    }
+
+    .article-header__title {
+      font-family: var(--font-serif);
+      font-size: clamp(30px, 4.5vw, 42px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .article-header__meta {
+      font-size: 14px;
+      color: var(--brown-light);
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Article Body ── */
+    .article-body {
+      padding: 48px 0 80px;
+    }
+
+    .article-body p {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      line-height: 1.85;
+      color: var(--brown-mid);
+      margin-bottom: 28px;
+    }
+
+    .article-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-body .disclosure {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--brown-light);
+      padding-bottom: 28px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--rule-color);
+    }
+
+    .article-body .postscript {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--brown-light);
+      padding-top: 28px;
+      margin-top: 32px;
+      border-top: 1px solid var(--rule-color);
+    }
+
+    /* ── Back Link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--terracotta);
+      padding: 0 0 80px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--terracotta-hover);
+    }
+
+    .back-link::before {
+      content: '←';
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid var(--rule-color);
+      padding: 24px 0;
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer__text {
+      font-size: 13px;
+      color: var(--brown-light);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      :root { --side-pad: 20px; }
+      .nav__links { gap: 16px; }
+      .nav__links a { font-size: 13px; }
+      .article-body p { font-size: 17px; }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--terracotta);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container container--wide">
+      <a href="/" class="nav__wordmark">Madhubani Impact</a>
+      <ul class="nav__links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/writing/" class="nav--active">Writing</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="article-header">
+    <div class="container">
+      <p class="eyebrow">Book Review</p>
+      <h1 class="article-header__title">Review: Positive Sum by Roy Swan</h1>
+      <div class="article-header__meta">
+        <span>Bikram Chandra</span>
+        <span>August 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="container">
+
+      <p class="disclosure">Disclosure: Roy led the mission investments team at the Ford Foundation while I was there, and still does. I know some of this work from the inside, and I have never had a conversation with him that did not leave me thinking.</p>
+
+      <p>The book goes after one idea: that for someone to win, someone else has to lose. Roy believes this is both inaccurate and expensive: zero-sum thinking, he argues, has cost the American economy tens of trillions over three decades.</p>
+
+      <p>His case rests on externalities. Every product, every service, every firm generates them, positive and negative, and almost none are priced into what we call a return. We measure what is easy to measure and call it the whole picture.</p>
+
+      <p>What makes the early chapters interesting is that Roy treats this blind spot as manufactured rather than accidental. Lewis Powell's 1971 memo, which I confess I knew nothing about before this book, set out to mobilize corporate America to defend free enterprise through the courts and politics. It worked, and it worked for generations. Alongside it sits a second dominant narrative: Adam Smith and Milton Friedman as patron saints of zero-sum capitalism. In both cases only half the story has been told, and Roy carefully untangles their philosophy to present the full picture.</p>
+
+      <p>The book is people-centric. It moves through leaders who used outsized influence to break the assumed trade-off between return and impact, which matters because it makes the argument feel available. If change came from individuals who believed something and acted on it, it is not reserved for institutions with billion-dollar balance sheets.</p>
+
+      <p>One thing from my own experience. In Papua New Guinea, I led livelihood work through commercial agribusiness, designed around job creation. It was a win for the workers, the business, and the communities living around the nucleus estate. Nobody had to lose for it to work. In this book I watched a general case get made for something I had already seen happen on the ground.</p>
+
+      <p>Where it leads is the part I find most interesting. Roy argues that computing power and AI are reaching the point where externalities can be shown clearly, on products, on services, and on investments themselves. Not through reporting mandates, but because the cost becomes visible in currency terms and can no longer be hidden. If that holds, the everyday decisions we make about what to buy and what to back are no longer blind ones. That is still an open question, and it is the one I look forward to most.</p>
+
+      <p>Roy closes by asking the reader: your move. After a walkthrough of the people who shaped this landscape, the frame turns around and it becomes clear that any of us could be one of those figures. He has equipped the reader with enough to plan that move, and I would like to see him keep the conversation going about what readers actually did with it.</p>
+
+      <p>Who should read it: practitioners will find their own work explained better than they usually explain it. And I would put it just as readily in the hands of a college student trying to work out not only what impact investing is, but what it is trying to solve.</p>
+
+      <p class="postscript">Written over three readings. The thinking is mine; AI helped cut it down to size.</p>
+
+    </div>
+  </article>
+
+  <div class="container">
+    <a href="/writing/" class="back-link">All writing</a>
+  </div>
+
+  <footer class="footer">
+    <div class="container container--wide">
+      <span class="footer__text">&copy; 2026 Madhubani Impact</span>
+      <span class="footer__text">Dallas, Texas</span>
+    </div>
+  </footer>
+
+</body>
+</html>
