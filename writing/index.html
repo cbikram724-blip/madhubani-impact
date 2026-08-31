@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing — Madhubani Impact</title>
+  <meta name="description" content="Essays and reviews on impact investing, development finance, and the work of deploying capital with conscience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5F0E8;
+      --cream-light: #FAF7F2;
+      --brown-dark: #2C2420;
+      --brown-mid: #4A3F38;
+      --brown-light: #6B5E55;
+      --terracotta: #B8513B;
+      --terracotta-hover: #9E4432;
+      --rule-color: #C4B8AB;
+      --font-serif: 'Source Serif 4', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+      --max-width: 960px;
+      --side-pad: 24px;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--brown-dark);
+      background-color: var(--cream-light);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    /* ── Navigation ── */
+    .nav {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule-color);
+    }
+
+    .nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav__wordmark {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--brown-dark);
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav__links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--brown-mid);
+      transition: color 0.2s;
+    }
+
+    .nav__links a:hover,
+    .nav__links a.nav--active {
+      color: var(--terracotta);
+    }
+
+    /* ── Page Header ── */
+    .page-header {
+      padding: 72px 0 48px;
+      border-bottom: 1px solid var(--rule-color);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1.5px;
+      background: var(--terracotta);
+    }
+
+    .page-header__title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4.5vw, 44px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .page-header__subtitle {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--brown-mid);
+      max-width: 560px;
+    }
+
+    /* ── Article List ── */
+    .articles {
+      padding: 48px 0 96px;
+    }
+
+    .article-item {
+      display: block;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--rule-color);
+      transition: background 0.15s;
+    }
+
+    .article-item:first-child {
+      border-top: none;
+    }
+
+    .article-item:hover .article-item__title {
+      color: var(--terracotta);
+    }
+
+    .article-item__type {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+
+    .article-item__title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .article-item__excerpt {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--brown-mid);
+      max-width: 640px;
+      margin-bottom: 12px;
+    }
+
+    .article-item__date {
+      font-size: 13px;
+      color: var(--brown-light);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid var(--rule-color);
+      padding: 24px 0;
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer__text {
+      font-size: 13px;
+      color: var(--brown-light);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      :root { --side-pad: 20px; }
+      .nav__links { gap: 16px; }
+      .nav__links a { font-size: 13px; }
+      .article-item__title { font-size: 20px; }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--terracotta);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="nav__wordmark">Madhubani Impact</a>
+      <ul class="nav__links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/writing/" class="nav--active">Writing</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <p class="eyebrow">Writing</p>
+      <h1 class="page-header__title">Essays and reviews</h1>
+      <p class="page-header__subtitle">On impact investing, development finance, and the work of deploying capital with conscience.</p>
+    </div>
+  </header>
+
+  <section class="articles">
+    <div class="container">
+
+      <!-- ═══ Article entry ═══ -->
+      <a href="/writing/positive-sum-review.html" class="article-item">
+        <p class="article-item__type">Book Review</p>
+        <h2 class="article-item__title">Review: Positive Sum by Roy Swan</h2>
+        <p class="article-item__excerpt">The book goes after one idea: that for someone to win, someone else has to lose. Roy believes this is both inaccurate and expensive.</p>
+        <p class="article-item__date">August 2026</p>
+      </a>
+
+      <!-- ═══ Add future articles above this line ═══ -->
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="footer__text">&copy; 2026 Madhubani Impact</span>
+      <span class="footer__text">Dallas, Texas</span>
+    </div>
+  </footer>
+
+</body>
+</html>
